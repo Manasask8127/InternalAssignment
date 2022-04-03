@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.manasask.assignment.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_addItemsFragment"
+            app:destination="@id/addItemsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addItemsFragment"
+        android:name="com.example.manasask.assignment.add.AddItemsFragment"
+        android:label="AddItemsFragment"
+        tools:layout="@layout/add_items_fragment">
+        <action
+            android:id="@+id/action_addItemsFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="Category"
+            app:argType="string" />
+    </fragment>
+
+
+
+</navigation>
